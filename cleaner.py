@@ -8,8 +8,26 @@ def filter_nondigits(data: list) -> list:
     Returns:
         list[int]: list of integers, with all non-digit strings removed
     """
-    pass
+    #creating new list with just integers
+    new_data = []
 
+    for item in data:
+        x = item.strip()
 
+        if x.isdigit():
+         new_data.append(int(x))
+        else:
+         continue
+    return new_data
+
+#flitering heart rate data to return wanted values
 def filter_outliers(data: list) -> list:
-    pass
+    hrt =[]
+    for item in data:
+       if item >30 and item <250:
+          hrt.append(item)
+       else:
+          continue
+    return hrt
+             
+        

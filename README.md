@@ -35,7 +35,7 @@ The `filter_outliers` function will function similarly, except this time, your f
 To test this module on all possible inputs open a terminal in VSCode. Go to the Terminal tab in the top menu and select New Terminal. Then type the following command:
 
 ```
-python test_cleaner.py
+cl
 ```
 
 We recommend working on this module **first**.

@@ -9,6 +9,8 @@ from cleaner import filter_nondigits, filter_outliers
 import matplotlib.pyplot as plt
 
 
+
+
 def run(filename: str) -> None:
     """
     Process heart rate data from the specified file, clean it, calculate metrics, 
@@ -20,7 +22,7 @@ def run(filename: str) -> None:
     Steps:
         1. Read the file into a list of strings.
         2. Use `filter_nondigits` to clean the data and remove invalid entries.
-        3. Use `filter_outliers` to remove unrealistic heart rate samples (<30 or >250).
+        3. Use `filter_outliers` to remove unrealistic heart rate samples (<=30 or >=250).
         4. Calculate rolling maximums, averages, and standard deviations using functions from `metrics.py`.
         5. Save the plots to the `images/` folder:
             - Rolling maximums -> 'images/maximums.png'
@@ -33,7 +35,53 @@ def run(filename: str) -> None:
     data = []
 
     # open file and read into the `data` list
-    ...
+    
+    file = open(filename)
+    # read string in file
+    for line in file:
+        data.append(line)
+    file.close()
+    
+
+    # using cleaner filters to remove nodidgits and outliers
+
+    data = filter_nondigits (data)
+    data = filter_outliers (data)
+
+    # using metics funtions to find max,average & st.dev of heart rate data
+
+    max = window_max (data,6)
+
+    avg = window_average(data,6)
+
+    stdev = window_stddev(data,6) 
+
+
+    fig,ax = plt.subplots()
+    ax.plot(max)
+    plt.savefig("images/window_max.png")
+
+
+    fig,ax = plt.subplots()
+    ax.plot(avg)
+    plt.savefig("images/averages.png")
+    
+    fig,ax = plt.subplots()
+    ax.plot(stdev)
+    plt.savefig("images/stddev.png")
+
+    return max,avg,stdev
+
+    
+
+
+
+
+
+    
+    #print (data_file)
+    
+
 
     # return all 3 lists
     ...
