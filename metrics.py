@@ -23,6 +23,7 @@ def window_max(data: list, n: int) -> list:
     
     
 
+#Computes the average of elements in a dataset over non-overlapping windows of size n.
 
 def window_average(data: list, n: int) -> list:
     results = []
@@ -36,6 +37,7 @@ def window_average(data: list, n: int) -> list:
 
 
 
+#Computes the standard deviation of elements in a dataset over non-overlapping windows of size n.
 
 def window_stddev(data: list, n: int) -> list:
  results =  []
@@ -46,8 +48,9 @@ def window_stddev(data: list, n: int) -> list:
      mean = sum(window) / len(window)
      variance = sum((i - mean) **2 for i in window) / (len(window)-1)
      stdev = variance ** 0.5
+#returns a list of standard deviations (rounded to 2 decimal places) for each window.
+ 
      results.append(round(stdev,2))
-
  return results 
 
 

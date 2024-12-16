@@ -8,13 +8,13 @@ Take a look at the file labeled `data/data2.txt`. Why might we have missing valu
 
 While the "averages.png" and "maximums.png" graphs visualize typical values in our time-series data of heart rates and subsequently describe similar trends, the "stdevs.png" graph visualizes the standard deviations, which results in a graph with less apparent trends. In the context of heart rate, what does the standard deviation describe?
 
-[The standard deviation describes the average distance between the data values ]
+[The standard deviation describes the average distance of data points from the mean (average). In this context, the standard deviation indicates how much the heart rate values vary over time. A higher standard deviation suggests that the heart rate values are more spread out and fluctuate significantly, while a lower standard deviation indicates that the heart rate values are more consistent and closer to the mean.]
 
 ## Question 3
 
 Run your `main.py` module and look at the graph labeled "averages.png." Roughly speaking, where do you see the time series experience a significant difference in values along the x-axis? Point out all x-values where you notice a drastic difference in future values.
 
-[From 10 to 30 I notice a drastic spike in average of heart rate data, this could be a result of a multitude of reasons]
+[From x-values 10 to 30 we can observe a drastic spike in average of heart rate data. This suggests the heart rate is elevated during this period.]
 
 ## Question 4
 
