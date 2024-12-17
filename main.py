@@ -47,7 +47,7 @@ def run(filename: str) -> None:
     # using filters_nondigits to remove nondidgits 
     data = filter_nondigits (data)
 
-    #using filter_outliers to find vaule greater <=30 or >=250
+    #using filter_outliers to find vaules <=30 or >=250
     data = filter_outliers (data)
 
     # using metics funtions to find max,average & st.dev of heart rate data
@@ -59,6 +59,7 @@ def run(filename: str) -> None:
     stdev = window_stddev(data,6) 
 
   # plotting and saving graphs for max,average & st.dev
+  
     fig,ax = plt.subplots()
     ax.plot(max)
     plt.savefig("images/maximums.png")

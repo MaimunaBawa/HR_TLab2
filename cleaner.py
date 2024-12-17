@@ -21,8 +21,19 @@ def filter_nondigits(data: list) -> list:
          continue
     return new_data
 
+
+
 #fliter heart rate data to return wanted values
 def filter_outliers(data: list) -> list:
+    """
+    Filter heart rate samples that are less than 30 and greater than 250
+
+    Args:
+        data (list[int]): list of integers representing heart rate samples.
+            Might be least than 30 or greater than 250.
+    Returns:
+        list[int]: list of integers, with all les than 30 and greater than 250 removed
+    """
     hrt = []
     for item in data:
        if item >30 and item <250:
